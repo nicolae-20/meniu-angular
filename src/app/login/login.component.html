@@ -1,18 +1,32 @@
 <div class="container">
-<form class="example-form">
-    <mat-form-field class="example-full-width" appearance="fill">
-      <mat-label>Username</mat-label>
-      <input matInput placeholder="Username" value="Username">
+
+<div>
+ 
+    <div class="fields">
+    <mat-form-field appearance="fill">
+      <mat-label>E-Mail</mat-label>
+      <input matInput placeholder="pat@example.com" [formControl]="email" required>
+      <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
+    </mat-form-field>
+
+  
+ 
+    <mat-form-field appearance="fill">
+      <mat-label>Password</mat-label>
+      <input matInput [type]="hide ? 'password' : 'text'">
+    
+      <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+        <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+      </button>
+      <mat-error *ngIf="password.invalid">{{getPasswordMessage()}}</mat-error>
     </mat-form-field>
   
-    <mat-form-field class="example-full-width" appearance="fill">
-      <mat-label>Password</mat-label>
-      <input matInput placeholder="Password" value="Password">
-    </mat-form-field>
-</form>
-<section>
+  </div>
+
+
     <div class="example-button-row">
         <button mat-raised-button color="primary">Login</button>
     </div>
-</section>
+  </div>
+
 </div>

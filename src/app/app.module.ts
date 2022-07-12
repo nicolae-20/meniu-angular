@@ -11,6 +11,9 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
 import { ProduseComponent } from './produse/produse.component';
 import { AuthComponent } from './auth/auth.component';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
 
 
 @NgModule({
@@ -29,6 +32,9 @@ import { AuthComponent } from './auth/auth.component';
     MatButtonModule,
     MatToolbarModule,
     MatIconModule,
+    MatFormFieldModule,
+    ReactiveFormsModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
