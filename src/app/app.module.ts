@@ -13,6 +13,8 @@ import { ProduseComponent } from './produse/produse.component';
 import { AuthComponent } from './auth/auth.component';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { PageNotFoundComponent } from './pagenotfound/pagenotfound.component';
+import { RouterModule } from '@angular/router';
 
 
 
@@ -22,7 +24,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     LoginComponent,
     NavbarComponent,
     ProduseComponent,
-    AuthComponent
+    AuthComponent,
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,
@@ -34,7 +37,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     MatIconModule,
     MatFormFieldModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    RouterModule
   ],
   providers: [],
   bootstrap: [AppComponent]
