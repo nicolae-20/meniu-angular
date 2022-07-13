@@ -2,43 +2,44 @@
 
     <div>
      
-        <div class="fields">
-        <mat-form-field appearance="fill">
-          <mat-label>E-Mail</mat-label>
-          <input matInput placeholder="pat@example.com"
-            [formControl]="email"
-            required
-            id="email"
-            ngModel
-            name="email"
-            email
-            >
-          <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
-        </mat-form-field>
-    
-      
-     
-        <mat-form-field appearance="fill">
-          <mat-label>Password</mat-label>
-          <input matInput [type]="hide ? 'password' : 'text'"
-            ngModel
-            name="password"
-            id="password"
-            required
-            minlength="15"
-          >
+        <form #authForm="ngForm" (ngSubmit)="onSubmit(authForm)" class="fields">
             
-          <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
-            <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
-          </button>
-          <mat-error *ngIf="password.invalid">{{getPasswordMessage()}}</mat-error>
-        </mat-form-field>
+            <mat-form-field appearance="fill">
+            <mat-label>E-Mail</mat-label>
+            <input matInput placeholder="pat@example.com"
+                [formControl]="email"
+                required
+                id="email"
+                ngModel
+                name="email"
+                email
+                >
+            <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
+            </mat-form-field>
+        
+        
+        
+            <mat-form-field appearance="fill">
+            <mat-label>Password</mat-label>
+            <input matInput [type]="hide ? 'password' : 'text'"
+                ngModel
+                name="password"
+                id="password"
+                required
+                minlength="15"
+            >
+                
+            <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+            </button>
+            <mat-error *ngIf="password.invalid">{{getPasswordMessage()}}</mat-error>
+            </mat-form-field>
       
-      </div>
+        </form>
     
     
         <div class="example-button-row">
-            <button mat-raised-button color="primary" type="submit">{{ isLogged ? 'Login' : 'Sing Up' }}</button>
+            <button mat-raised-button color="primary" type="submit" [disabled]="!authForm.valid">{{ isLogged ? 'Login' : 'Sing Up' }}</button>
             <button mat-raised-button color="primary" (click)="onSwitchMode()" type="button">Switch to {{ isLogged ? 'Sign Up' : 'Login' }}</button>
         </div>
       </div>

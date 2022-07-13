@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormControl, Validators } from '@angular/forms';
+import { FormControl, NgForm, Validators } from '@angular/forms';
 
 @Component({
     selector: 'app-auth',
@@ -20,6 +20,11 @@ export class AuthComponent {
         this.isLogged = !this.isLogged;
     }
 
+    onSubmit(form: NgForm) {
+        console.log(form.value);
+        form.reset();
+    }
+
     getErrorMessage() {
       if (this.email.hasError('required')) {
         return 'Trebuie sa introduci un email';
@@ -31,7 +36,7 @@ export class AuthComponent {
     getPasswordMessage() {
       if (this.password.validator?.length)
       {
-        return 'Parola trebuie sa contina minimum 15 caractere';
+        return 'Parola trebuie să conțină minimum 15 caractere';
       }
 
         return;
