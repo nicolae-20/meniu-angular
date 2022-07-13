@@ -2,7 +2,20 @@
     flex: 1 1 auto;
   }
 
-.text {
+.text-meniu,
+.text-login {
   color: white;
   text-decoration: none;
+  font-size: 18px;
+}
+
+.text-meniu {
+  margin-left: 20px;
+}
+
+.mat-button {
+  background-color: #324191;
+  font-size: 18px;
+  text-align: center;
+  cursor: pointer;
 }

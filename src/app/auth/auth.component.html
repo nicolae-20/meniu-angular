@@ -1,25 +1,46 @@
-<router-outlet>
-    <div class="container">
-        <form class="example-form">
-            <mat-form-field class="example-full-width" appearance="fill">
-              <mat-label for="email">E-mail</mat-label>
-              <input matInput type="email" id="email" placeholder="E-mail" value="E-mail">
-            </mat-form-field>
-          
-            <mat-form-field class="example-full-width" appearance="fill">
-              <mat-label for="password">Password</mat-label>
-              <input matInput type="password" id="password" placeholder="Password" value="Password">
-            </mat-form-field>
-            <section>
-                <div class="example-button-row">
-                    <button mat-raised-button color="primary">Sign Up</button>
-                </div>
-            </section>
-            <section>
-                <div class="example-button-row">
-                    <button mat-raised-button color="primary">Switch to Login</button>
-                </div>
-            </section>
-        </form>
+<div class="container">
+
+    <div>
+     
+        <div class="fields">
+        <mat-form-field appearance="fill">
+          <mat-label>E-Mail</mat-label>
+          <input matInput placeholder="pat@example.com"
+            [formControl]="email"
+            required
+            id="email"
+            ngModel
+            name="email"
+            email
+            >
+          <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
+        </mat-form-field>
+    
+      
+     
+        <mat-form-field appearance="fill">
+          <mat-label>Password</mat-label>
+          <input matInput [type]="hide ? 'password' : 'text'"
+            ngModel
+            name="password"
+            id="password"
+            required
+            minlength="15"
+          >
+            
+          <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+            <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+          </button>
+          <mat-error *ngIf="password.invalid">{{getPasswordMessage()}}</mat-error>
+        </mat-form-field>
+      
+      </div>
+    
+    
+        <div class="example-button-row">
+            <button mat-raised-button color="primary" type="submit">{{ isLogged ? 'Login' : 'Sing Up' }}</button>
+            <button mat-raised-button color="primary" (click)="onSwitchMode()" type="button">Switch to {{ isLogged ? 'Sign Up' : 'Login' }}</button>
+        </div>
+      </div>
+    
     </div>
-</router-outlet>
