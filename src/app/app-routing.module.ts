@@ -8,7 +8,6 @@ import { PageNotFoundComponent } from './pagenotfound/pagenotfound.component';
 import { ProduseComponent } from './produse/produse.component';
 
 const routes: Routes = [
-
   // { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: 'home', component: HomeComponent },
   { path: 'recipies', component: NavbarComponent },
@@ -25,3 +24,4 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
+export const routingComponent = [HomeComponent, PageNotFoundComponent]

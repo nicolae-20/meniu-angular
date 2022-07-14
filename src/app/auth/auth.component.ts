@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormControl, NgForm, Validators } from '@angular/forms';
+import {  Router } from '@angular/router';
 
 @Component({
     selector: 'app-auth',
@@ -8,6 +9,8 @@ import { FormControl, NgForm, Validators } from '@angular/forms';
 })
 export class AuthComponent {
 
+    showPassword: boolean = false;
+
     isLogged: boolean = true;
 
     minLengthPass: number = 15;
@@ -15,6 +18,8 @@ export class AuthComponent {
     email = new FormControl('', [Validators.required, Validators.email]);
     password = new FormControl('', [Validators.required, Validators.minLength(this.minLengthPass)])
     hide = true;
+
+    constructor(private route: Router) {}
   
     onSwitchMode() {
         this.isLogged = !this.isLogged;
@@ -41,5 +46,18 @@ export class AuthComponent {
 
         return;
     }
+    
+    public togglePasswordVisibility(): void {
+      this.showPassword = !this.showPassword;
+    }
+
+    // onLogin() {
+    //   if (this.email === "test@gmail.com" && this.password === "123456789123456789") {
+    //     this.route.navigateByUrl('home');
+    //   } else {
+
+    //   }
+    // }
+  
   }
   

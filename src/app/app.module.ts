@@ -13,8 +13,9 @@ import { ProduseComponent } from './produse/produse.component';
 import { AuthComponent } from './auth/auth.component';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { PageNotFoundComponent } from './pagenotfound/pagenotfound.component';
 import { RouterModule } from '@angular/router';
+import { routingComponent } from './app-routing.module';
+import { MatCardModule } from '@angular/material/card';
 
 
 
@@ -25,7 +26,7 @@ import { RouterModule } from '@angular/router';
     NavbarComponent,
     ProduseComponent,
     AuthComponent,
-    PageNotFoundComponent
+    routingComponent,
   ],
   imports: [
     BrowserModule,
@@ -38,7 +39,8 @@ import { RouterModule } from '@angular/router';
     MatFormFieldModule,
     ReactiveFormsModule,
     FormsModule,
-    RouterModule
+    RouterModule,
+    MatCardModule
   ],
   providers: [],
   bootstrap: [AppComponent]
