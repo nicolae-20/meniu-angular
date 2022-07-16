@@ -2,7 +2,11 @@
     <mat-card class="example-card">
         <mat-card-header>
           <div mat-card-avatar class="example-header-image"></div>
-          <mat-card-title>{{product.title}}</mat-card-title>
+          <mat-card-title>
+            <app-produse-lista>
+              {{product.title}}
+            </app-produse-lista>
+          </mat-card-title>
           <mat-card-subtitle>{{product.description}}</mat-card-subtitle>
         </mat-card-header>
        
@@ -11,6 +15,7 @@
             {{product.description}}
           </p>
         </mat-card-content>
+        <app-produse-info></app-produse-info>
         <mat-card-actions>
           <button mat-button>Add</button>
           <button mat-button>Edit</button>

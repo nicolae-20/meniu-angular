@@ -1,0 +1,23 @@
+.example-spacer {
+    flex: 1 1 auto;
+  }
+
+.text-meniu,
+.text-login {
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+.mat-button {
+  background-color: #324191;
+  font-size: 18px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.navbar-list {
+    display: flex;
+    flex-direction: row;
+    gap: 1.5rem;
+}

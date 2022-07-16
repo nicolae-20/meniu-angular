@@ -50,14 +50,6 @@ export class AuthComponent {
     public togglePasswordVisibility(): void {
       this.showPassword = !this.showPassword;
     }
-
-    // onLogin() {
-    //   if (this.email === "test@gmail.com" && this.password === "123456789123456789") {
-    //     this.route.navigateByUrl('home');
-    //   } else {
-
-    //   }
-    // }
   
   }
   

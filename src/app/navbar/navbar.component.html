@@ -1,1 +1,23 @@
-<p>navbar page</p>
+<p>
+    <mat-toolbar color="primary">
+      <mat-toolbar-row>
+        <div class="navbar-list">
+            <a routerLink="/home" class="text-meniu" mat-button>Meniu</a>
+            <a routerLink="/shopping-cart" class="shopping-list" mat-button>Shopping Cart</a>
+        </div>
+        <span class="example-spacer"></span>
+
+        <div class="navbar-list">
+            <button mat-button [matMenuTriggerFor]="menu">Manage</button>
+        <mat-menu #menu="matMenu">
+            <button mat-menu-item>Salveaza datele</button>
+            <button mat-menu-item>Fetch datele</button>
+        </mat-menu>
+        <a routerLink="/login" class="text-login" mat-button>Login</a>
+        </div>
+        
+        
+      </mat-toolbar-row>
+    </mat-toolbar>
+    
+  </p>
