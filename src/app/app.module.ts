@@ -23,7 +23,7 @@ import { ProduseListaComponent } from './produse/produse-lista/produse-lista.com
 import { ProdusIdComponent } from './produse/produse-lista/produs-id/produs-id.component';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatDialogModule } from '@angular/material/dialog';
-
+import { MatGridListModule } from '@angular/material/grid-list';
 
 
 @NgModule({
@@ -54,7 +54,8 @@ import { MatDialogModule } from '@angular/material/dialog';
     RouterModule,
     MatCardModule,
     MatMenuModule,
-    MatDialogModule
+    MatDialogModule,
+    MatGridListModule
   ],
   providers: [],
   bootstrap: [AppComponent]

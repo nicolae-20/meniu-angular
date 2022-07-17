@@ -1,1 +1,28 @@
-<app-produs-id></app-produs-id>
+<div *ngFor="let product of products">
+    <mat-card class="example-card">
+        <mat-card-title-group>
+            <mat-card-title>
+                {{product.title}}
+            </mat-card-title>
+            <img mat-card-md-image [src]="product.image" [alt]="product.title" />
+                <!-- <div>
+                    <h4>
+                        {{product.title}}
+                    </h4>
+                    <p>
+                        {{product.description}}
+                    </p>
+                    <span>
+                        <img src="{{product.image}}" alt="{{product.title}}" class="img-responsive" style="max-height: 50px;" />
+                    </span>
+                </div> -->
+        
+            
+        </mat-card-title-group>
+        <mat-card-content>
+            {{product.description}}
+        </mat-card-content>
+        <app-produs-id></app-produs-id>
+    </mat-card>
+</div>
+
