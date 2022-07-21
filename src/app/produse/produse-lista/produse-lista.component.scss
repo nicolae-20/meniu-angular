@@ -1,4 +1,64 @@
 .example-card {
-    max-width: 400px;
-    margin-bottom: 8px;
+    max-width: 900px;
+}
+
+.lista-produse {
+    display: inline-grid;
+    width: 30rem;
+}
+
+.lista-produse-2 {
+    display: flex;
+    flex-direction: row;
+    padding: 2rem;
+    justify-content: space-between;
+}
+
+
+
+.container {
+    margin-top: 1rem;
+    position: relative;
+    width: 100%;
+
+}
+
+.image {
+
+}
+
+.overlay {
+    position: absolute;
+    top: 3rem;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 21.3rem;
+    width: 100%;
+    opacity: 0;
+    transition: .2s ease;
+    background-color: rgba(0, 0, 0, 0.6);
+  }
+
+  .container:hover .overlay {
+    opacity: 1;
+  }
+
+.icon {
+    cursor: pointer;
+    background: none;
+    border: none;
+    padding: 3px 10px;
+    color: white;
+    font-size: 80px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.icon:hover {
+    color: rgb(215, 215, 215);
 }

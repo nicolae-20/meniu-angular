@@ -1,11 +1,13 @@
-<div *ngFor="let product of products">
+<!-- <div *ngFor="let product of products">
     <mat-card class="example-card">
         <mat-card-title-group>
             <mat-card-title>
                 {{product.title}}
             </mat-card-title>
             <img mat-card-md-image [src]="product.image" [alt]="product.title" />
-                <!-- <div>
+
+
+                <div>
                     <h4>
                         {{product.title}}
                     </h4>
@@ -15,7 +17,7 @@
                     <span>
                         <img src="{{product.image}}" alt="{{product.title}}" class="img-responsive" style="max-height: 50px;" />
                     </span>
-                </div> -->
+                </div>
         
             
         </mat-card-title-group>
@@ -25,4 +27,41 @@
         <app-produs-id></app-produs-id>
     </mat-card>
 </div>
+ -->
 
+ <div *ngFor="let product of products" class="lista-produse-2">
+    <div class="container">
+    <mat-card class="example-card lista-produse">
+
+        <mat-card-header>
+           
+                
+            
+            <mat-card-title>
+                {{product.title}}
+            </mat-card-title>
+        </mat-card-header>
+        
+
+            <img class="mat-card-image image" [src]="product.image" />
+        <div class="overlay">
+            <button class="material-symbols-outlined icon">
+                add_shopping_cart
+            </button>
+        </div>
+    
+   
+
+        <mat-card-content>
+            <p>
+              {{product.description}}  
+            </p>
+        </mat-card-content>
+        <!-- <app-produs-id></app-produs-id> -->
+
+     
+
+        
+     </mat-card>
+    </div>
+ </div>

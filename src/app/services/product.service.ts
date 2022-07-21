@@ -18,21 +18,21 @@ export class ProductService {
             title: "reteta 2",
             price: 3,
             description: "continut",
-            image: "",
+            image: "https://retete.unica.ro/wp-content/uploads/2011/05/01-bucatarie-internationala.jpg",
         },
         {
             id: 2,
             title: "reteta 3",
             price: 5,
             description: "continut",
-            image: "",
+            image: "https://retete.unica.ro/wp-content/uploads/2011/05/04-bucatarie-greceasca.jpg",
         },
         {
             id: 3,
             title: "reteta 4",
             price: 3,
             description: "continut",
-            image: "",
+            image: "https://dulciurifeldefel.ro/wp-content/uploads/2021/01/prajitura-frantuzeasca-5.jpg",
         },
     ]
 
