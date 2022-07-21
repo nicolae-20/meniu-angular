@@ -6,6 +6,8 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { PageNotFoundComponent } from './pagenotfound/pagenotfound.component';
 import { ProduseComponent } from './produse/produse.component';
 import { ShoppingListComponent } from './shopping-list/shopping-list.component';
+import { AddProductComponent } from './add-product/add-product.component';
+
 
 const routes: Routes = [
   // { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -15,6 +17,7 @@ const routes: Routes = [
   { path: 'products', component: ProduseComponent },
   { path: 'navbar', component: NavbarComponent },
   { path: 'shopping-cart', component: ShoppingListComponent },
+  { path: 'add-product', component: AddProductComponent },
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: '**', pathMatch: 'full', component: PageNotFoundComponent },
 ];

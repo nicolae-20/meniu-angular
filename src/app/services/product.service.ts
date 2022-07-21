@@ -39,4 +39,15 @@ export class ProductService {
     getProducts() {
         return this.products;
       }
+
+      createProduct(productTitle:string, productDescription:string, price: number, image: string) {
+        const product = {
+                    id: 123,
+                    image: image,
+                    description: productDescription,
+                    title: productTitle,
+                    price: 12
+                    };
+        return this.products.push(product);
+      }
 }

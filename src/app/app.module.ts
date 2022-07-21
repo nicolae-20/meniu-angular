@@ -24,6 +24,11 @@ import { ProdusIdComponent } from './produse/produse-lista/produs-id/produs-id.c
 import { MatMenuModule } from '@angular/material/menu';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatGridListModule } from '@angular/material/grid-list';
+import { CustomPipe } from './custom.pipe';
+import { MatTooltipModule } from '@angular/material/tooltip';
+import { AddProductComponent } from './add-product/add-product.component';
+import { ChildComponent } from './child/child.component';
+import { ParentComponent } from './parent/parent.component';
 
 
 @NgModule({
@@ -39,6 +44,10 @@ import { MatGridListModule } from '@angular/material/grid-list';
     ProduseListaComponent,
     ProdusIdComponent,
     ShoppingListComponent,
+    CustomPipe,
+    AddProductComponent,
+    ChildComponent,
+    ParentComponent,
   ],
   imports: [
     BrowserModule,
@@ -55,7 +64,8 @@ import { MatGridListModule } from '@angular/material/grid-list';
     MatCardModule,
     MatMenuModule,
     MatDialogModule,
-    MatGridListModule
+    MatGridListModule,
+    MatTooltipModule
   ],
   providers: [],
   bootstrap: [AppComponent]
