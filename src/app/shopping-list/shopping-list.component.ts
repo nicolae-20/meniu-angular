@@ -1,7 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog, MatDialogRef } from '@angular/material/dialog';
-import { Product } from '../produse/produse.component';
+import { ProductClass } from '../models/product';
+import { CartService } from '../cart.service';
 import { ProductService } from '../services/product.service';
+import { FormBuilder } from '@angular/forms';
+
 
 @Component({
   selector: 'app-shopping-list',
@@ -10,9 +13,24 @@ import { ProductService } from '../services/product.service';
 })
 export class ShoppingListComponent implements OnInit {
 
-  products: Product[] = []
+  
+  cartItems = this.cartService.getItems()
+  
+  checkoutForm = this.formBuilder.group({
+    name: '',
+    address: ''
+  })
 
-  constructor(public dialog: MatDialog, private productServie: ProductService) {}
+  products: ProductClass[] = []
+
+  constructor(private cartService: CartService, private formBuilder: FormBuilder, public dialog: MatDialog, private productServie: ProductService) {}
+
+  onSubmit(): void {
+    this.cartItems = this.cartService.clearCart()
+    console.warn('Comanda dumneavoastră a fost trimisă', 
+    this.checkoutForm.value)
+    this.checkoutForm.reset()
+  }
 
   openDialog(enterAnimationDuration: string, exitAnimationDuration: string): void {
     this.dialog.open(DialogAnimationsExampleDialog, {

@@ -1,34 +1,3 @@
-<!-- <div *ngFor="let product of products">
-    <mat-card class="example-card">
-        <mat-card-title-group>
-            <mat-card-title>
-                {{product.title}}
-            </mat-card-title>
-            <img mat-card-md-image [src]="product.image" [alt]="product.title" />
-
-
-                <div>
-                    <h4>
-                        {{product.title}}
-                    </h4>
-                    <p>
-                        {{product.description}}
-                    </p>
-                    <span>
-                        <img src="{{product.image}}" alt="{{product.title}}" class="img-responsive" style="max-height: 50px;" />
-                    </span>
-                </div>
-        
-            
-        </mat-card-title-group>
-        <mat-card-content>
-            {{product.description}}
-        </mat-card-content>
-        <app-produs-id></app-produs-id>
-    </mat-card>
-</div>
- -->
-
  <div *ngFor="let product of products" class="lista-produse-2">
     <div class="container">
     <mat-card class="example-card lista-produse">
@@ -45,7 +14,7 @@
 
             <img class="mat-card-image image" [src]="product.image" />
         <div class="overlay">
-            <button class="material-symbols-outlined icon">
+            <button type="button" (click)="addToCart(product)" class="material-symbols-outlined icon">
                 add_shopping_cart
             </button>
         </div>
@@ -60,14 +29,14 @@
         <!-- <app-produs-id></app-produs-id> -->
 
      
-
+        <mat-card-title>{{product.price | currency: 'RON'}}</mat-card-title>
         
      </mat-card>
-     
+     <!-- <app-produs-id [products]="product"></app-produs-id> -->
     </div>
     
  </div>
- <mat-card class="product">
+ <!-- <mat-card class="product">
     <button mat-icon-button routerLink="add-product"><mat-icon class='mat-icon'>add</mat-icon></button>
   </mat-card>
-  <app-parent></app-parent>
+  <app-parent></app-parent> -->

@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { CartService } from 'src/app/cart.service';
+import { ProductClass } from 'src/app/models/product';
 import { ProductService } from 'src/app/services/product.service';
-import { Product } from '../produse.component';
 
 @Component({
   selector: 'app-produse-lista',
@@ -9,9 +11,15 @@ import { Product } from '../produse.component';
 })
 export class ProduseListaComponent implements OnInit {
 
-  products: Product[] = []
+  products: ProductClass[] = []
+  constructor(private route: ActivatedRoute,
+    private cartService: CartService,private productService: ProductService) { }
+addToCart(product: ProductClass) {
+this.cartService.addToCart(product)
+window.alert('Produsul a fost adăugat în coșul tău');
+}
 
-  constructor(private productService: ProductService) { }
+  
 
   ngOnInit(): void {
     this.products = this.productService.getProducts()

@@ -18,7 +18,6 @@ import { MatCardModule } from '@angular/material/card';
 import { ShoppingListComponent } from './shopping-list/shopping-list.component';
 import { ShoppingEditComponent } from './shopping-list/shopping-edit/shopping-edit.component';
 import { HeaderComponent } from './header/header.component';
-import { ProduseInfoComponent } from './produse/produse-info/produse-info.component';
 import { ProduseListaComponent } from './produse/produse-lista/produse-lista.component';
 import { ProdusIdComponent } from './produse/produse-lista/produs-id/produs-id.component';
 import { MatMenuModule } from '@angular/material/menu';
@@ -29,6 +28,8 @@ import { MatTooltipModule } from '@angular/material/tooltip';
 import { AddProductComponent } from './add-product/add-product.component';
 import { ChildComponent } from './child/child.component';
 import { ParentComponent } from './parent/parent.component';
+import { ProductDetailsComponent } from './product-details/product-details/product-details.component';
+import { MatBadgeModule } from '@angular/material/badge';
 
 
 @NgModule({
@@ -40,7 +41,6 @@ import { ParentComponent } from './parent/parent.component';
     routingComponent,
     ShoppingEditComponent,
     HeaderComponent,
-    ProduseInfoComponent,
     ProduseListaComponent,
     ProdusIdComponent,
     ShoppingListComponent,
@@ -48,6 +48,7 @@ import { ParentComponent } from './parent/parent.component';
     AddProductComponent,
     ChildComponent,
     ParentComponent,
+    ProductDetailsComponent,
   ],
   imports: [
     BrowserModule,
@@ -65,7 +66,8 @@ import { ParentComponent } from './parent/parent.component';
     MatMenuModule,
     MatDialogModule,
     MatGridListModule,
-    MatTooltipModule
+    MatTooltipModule,
+    MatBadgeModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -14,7 +14,7 @@ const routes: Routes = [
   { path: 'home', component: ProduseComponent },
   { path: 'recipies', component: NavbarComponent },
   { path: 'login', component: AuthComponent },
-  { path: 'products', component: ProduseComponent },
+  { path: 'products/:productId', component: ProduseComponent },
   { path: 'navbar', component: NavbarComponent },
   { path: 'shopping-cart', component: ShoppingListComponent },
   { path: 'add-product', component: AddProductComponent },

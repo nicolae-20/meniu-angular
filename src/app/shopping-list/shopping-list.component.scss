@@ -21,3 +21,12 @@ button {
     display: inline-grid;
     width: 30rem;
 }
+
+.alert {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    font-size: 1.4rem;
+    color: rgb(90, 90, 90);
+}
