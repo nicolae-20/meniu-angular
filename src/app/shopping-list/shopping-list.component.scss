@@ -30,3 +30,36 @@ button {
     font-size: 1.4rem;
     color: rgb(90, 90, 90);
 }
+
+.checkout {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+    margin-top: 3rem;
+    margin-bottom: 10rem;
+}
+
+.name input,
+.address input {
+    border: 2px solid rgb(171, 171, 171);
+    border-radius: 5px;
+    padding: 5px 6px;
+    max-width: fit-content;
+}
+
+.name {
+    margin-bottom: 3px;
+}
+
+.name,
+.address {
+    display: flex;
+    flex-direction: column;
+}
+
+.buy-button {
+    max-width: fit-content;
+    margin-top: 15px;
+}

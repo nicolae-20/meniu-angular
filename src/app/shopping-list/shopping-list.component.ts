@@ -14,6 +14,7 @@ import { FormBuilder } from '@angular/forms';
 export class ShoppingListComponent implements OnInit {
 
   
+  
   cartItems = this.cartService.getItems()
   
   checkoutForm = this.formBuilder.group({
@@ -52,11 +53,3 @@ export class ShoppingListComponent implements OnInit {
 export class DialogAnimationsExampleDialog {
   constructor(public dialogRef: MatDialogRef<DialogAnimationsExampleDialog>) {}
 }
-
-// products: Product[] = []
-
-//   constructor(private productService: ProductService) { }
-
-//   ngOnInit(): void {
-//     this.products = this.productService.getProducts()
-//   }
