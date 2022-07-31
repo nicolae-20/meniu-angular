@@ -31,6 +31,18 @@ import { ParentComponent } from './parent/parent.component';
 import { ProductDetailsComponent } from './product-details/product-details/product-details.component';
 import { MatBadgeModule } from '@angular/material/badge';
 import { MatStepperModule } from '@angular/material/stepper';
+import { CheckoutComponent } from './checkout/checkout.component';
+import { AngularFireModule } from "@angular/fire/compat";
+import { AngularFireAuthModule } from "@angular/fire/compat/auth";
+import { AngularFireStorageModule } from '@angular/fire/compat/storage';
+import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
+import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
+import { environment } from 'src/environments/environment';
+import {AngularFireFunctionsModule} from '@angular/fire/compat/functions';
+import {AngularFireMessagingModule} from '@angular/fire/compat/messaging'
+import { AuthService } from './shared/services/auth.service';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { VerifyEmailComponent } from './verifyemail/verifyemail.component';
 
 
 @NgModule({
@@ -50,6 +62,8 @@ import { MatStepperModule } from '@angular/material/stepper';
     ChildComponent,
     ParentComponent,
     ProductDetailsComponent,
+    CheckoutComponent,
+    VerifyEmailComponent,
   ],
   imports: [
     BrowserModule,
@@ -69,9 +83,17 @@ import { MatStepperModule } from '@angular/material/stepper';
     MatGridListModule,
     MatTooltipModule,
     MatBadgeModule,
-    MatStepperModule
+    MatStepperModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFirestoreModule,
+    AngularFireAuthModule,
+    AngularFireStorageModule,
+    AngularFireMessagingModule,
+    AngularFireDatabaseModule,
+    AngularFireFunctionsModule,
+    FontAwesomeModule
   ],
-  providers: [],
+  providers: [AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

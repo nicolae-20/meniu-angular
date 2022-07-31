@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { FormControl, NgForm, Validators } from '@angular/forms';
-import {  Router } from '@angular/router';
+import { AuthService } from '../shared/services/auth.service';
+
 
 @Component({
     selector: 'app-auth',
@@ -19,8 +20,10 @@ export class AuthComponent {
     password = new FormControl('', [Validators.required, Validators.minLength(this.minLengthPass)])
     hide = true;
 
-    constructor(private route: Router) {}
+    constructor(public authService: AuthService) {}
   
+    
+
     onSwitchMode() {
         this.isLogged = !this.isLogged;
     }

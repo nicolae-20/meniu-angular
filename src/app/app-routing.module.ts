@@ -7,7 +7,7 @@ import { PageNotFoundComponent } from './pagenotfound/pagenotfound.component';
 import { ProduseComponent } from './produse/produse.component';
 import { ShoppingListComponent } from './shopping-list/shopping-list.component';
 import { AddProductComponent } from './add-product/add-product.component';
-
+import { VerifyEmailComponent } from './verifyemail/verifyemail.component';
 
 
 const routes: Routes = [
@@ -19,6 +19,7 @@ const routes: Routes = [
   { path: 'navbar', component: NavbarComponent },
   { path: 'shopping-cart', component: ShoppingListComponent },
   { path: 'add-product', component: AddProductComponent },
+  { path: 'verify-email-address', component: VerifyEmailComponent },
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: '**', pathMatch: 'full', component: PageNotFoundComponent },
 ];
