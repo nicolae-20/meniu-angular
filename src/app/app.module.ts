@@ -30,6 +30,7 @@ import { ChildComponent } from './child/child.component';
 import { ParentComponent } from './parent/parent.component';
 import { ProductDetailsComponent } from './product-details/product-details/product-details.component';
 import { MatBadgeModule } from '@angular/material/badge';
+import { MatStepperModule } from '@angular/material/stepper';
 
 
 @NgModule({
@@ -67,7 +68,8 @@ import { MatBadgeModule } from '@angular/material/badge';
     MatDialogModule,
     MatGridListModule,
     MatTooltipModule,
-    MatBadgeModule
+    MatBadgeModule,
+    MatStepperModule
   ],
   providers: [],
   bootstrap: [AppComponent]

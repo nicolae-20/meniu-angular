@@ -9,6 +9,7 @@ import { ShoppingListComponent } from './shopping-list/shopping-list.component';
 import { AddProductComponent } from './add-product/add-product.component';
 
 
+
 const routes: Routes = [
   // { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: 'home', component: ProduseComponent },

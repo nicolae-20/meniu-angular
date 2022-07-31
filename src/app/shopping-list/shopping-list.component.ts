@@ -3,7 +3,7 @@ import { MatDialog, MatDialogRef } from '@angular/material/dialog';
 import { ProductClass } from '../models/product';
 import { CartService } from '../cart.service';
 import { ProductService } from '../services/product.service';
-import { FormBuilder } from '@angular/forms';
+import { FormBuilder, Validators } from '@angular/forms';
 
 
 @Component({
@@ -13,7 +13,12 @@ import { FormBuilder } from '@angular/forms';
 })
 export class ShoppingListComponent implements OnInit {
 
-  
+  firstFormGroup = this._formBuilder.group({
+    firstCtrl: ['', Validators.required]
+  })
+  secondFormGroup = this._formBuilder.group({
+    secondCtrl: ['', Validators.required],
+  })
   
   cartItems = this.cartService.getItems()
   
@@ -24,14 +29,15 @@ export class ShoppingListComponent implements OnInit {
 
   products: ProductClass[] = []
 
-  constructor(private cartService: CartService, private formBuilder: FormBuilder, public dialog: MatDialog, private productServie: ProductService) {}
+  constructor(private _formBuilder: FormBuilder, private cartService: CartService, private formBuilder: FormBuilder, public dialog: MatDialog, private productServie: ProductService) {}
 
-  onSubmit(): void {
-    this.cartItems = this.cartService.clearCart()
-    console.warn('Comanda dumneavoastră a fost trimisă', 
-    this.checkoutForm.value)
-    this.checkoutForm.reset()
-  }
+  // onSubmit(): void {
+  //   this.cartItems = this.cartService.clearCart()
+  //   console.warn('Comanda dumneavoastră a fost trimisă', 
+  //   this.firstFormGroup.value, this.secondFormGroup.value)
+  //   this.firstFormGroup.reset()
+  //   this.secondFormGroup.reset()
+  // }
 
   openDialog(enterAnimationDuration: string, exitAnimationDuration: string): void {
     this.dialog.open(DialogAnimationsExampleDialog, {
@@ -40,6 +46,15 @@ export class ShoppingListComponent implements OnInit {
       exitAnimationDuration,
     });
   }
+
+  removeProduct(index: number) {
+    this.cartService.removeItem(index)
+  }
+
+  showTotalPrice() {
+    return this.cartService.getTotalPrice()
+  }
+
 
   ngOnInit(): void {
     this.products = this.productServie.getProducts();

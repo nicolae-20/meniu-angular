@@ -3,7 +3,7 @@
     <span ></span>
 </div>
 <div *ngIf="cartItems.length > 0">
-    <div *ngFor="let item of cartItems" class="grid-container">
+    <div *ngFor="let item of cartItems; let i = index" class="grid-container">
         <mat-card class="card">
             <mat-card-title>{{item.title}}</mat-card-title>
             <!-- <app-shopping-edit></app-shopping-edit> -->
@@ -13,18 +13,21 @@
                     <!-- <button mat-button>Add</button>
                     <button mat-button>Edit</button> -->
                 </div>
-                <button mat-button (click)="openDialog('0ms', '0ms')" class="delete-button">Ștergere</button>
+                <button mat-button (click)="removeProduct(i)" class="delete-button">Ștergere</button>
             </mat-card-actions>
         </mat-card>
 
+
+
 </div>
+<h1>Total cost: {{showTotalPrice()}}</h1>
 
 <!-- <strong class="total">Total: </strong> -->
 <!-- <a routerLink="/shopping-cart" class="text-login" mat-button>
     <i class="material-icons">shopping_cart</i>Checkout
   </a> -->
 
-  <form [formGroup] = "checkoutForm" (ngSubmit)="onSubmit()" class="checkout">
+  <!-- <form [formGroup] = "checkoutForm" (ngSubmit)="onSubmit()" class="checkout">
     <div class="name">
         <label for="name">
           Nume
@@ -40,7 +43,55 @@
       </div>
     
       <button mat-raised-button class="buy-button" type="submit" color="primary">Cumpără</button>
-  </form>
+  </form> -->
+
+  <mat-stepper linear #stepper>
+    <mat-step [stepControl]="firstFormGroup">
+      <form [formGroup]="firstFormGroup">
+        <ng-template matStepLabel>Fill out your name</ng-template>
+        <mat-form-field appearance="fill">
+          <mat-label>Name</mat-label>
+          <input matInput formControlName="firstCtrl" placeholder="LastName, FirstName" />
+        </mat-form-field>
+        <div>
+          <button mat-button matStepperNext>Next</button>
+        </div>
+      </form>
+    </mat-step>
+    <mat-step [stepControl]="secondFormGroup">
+      <form [formGroup]="secondFormGroup">
+        <ng-template matStepLabel>Fill out your address</ng-template>
+        <mat-form-field>
+          <mat-label>Address</mat-label>
+          <input matInput formControlName="secondCtrl" placeholder="Ex: Street, City" required />
+        </mat-form-field>
+        <div>
+          <button mat-button matStepperPrevious>Back</button>
+          <button mat-button matStepperNext>Next</button>
+        </div>
+      </form>
+    </mat-step>
+    <mat-step>
+      <ng-template matStepLabel>Confirm information</ng-template>
+      <div>
+        <p>Name: {{firstFormGroup.value.firstCtrl?.toString()}}</p>
+        <p>Address: {{secondFormGroup.value.secondCtrl?.toString()}}</p>
+        <b>All looking good?</b>
+      </div>
+      <div>
+        <button mat-button (click)="stepper.reset()">Reset</button>
+        <button mat-button matStepperNext>Yes</button>
+      </div>
+    </mat-step>
+    <mat-step>
+      <ng-template matStepLabel>Purchase</ng-template>
+      <p>You are now done.</p>
+      <div>
+        <button mat-button matStepperPrevious>Back</button>
+        <button mat-raised-button class="buy-button" type="submit" color="primary">Purchase</button>
+      </div>
+    </mat-step>
+  </mat-stepper>
 
 
 </div>
