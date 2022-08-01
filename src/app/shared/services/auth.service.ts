@@ -80,8 +80,8 @@ export class AuthService {
   }
 
   get isLoggedIn(): boolean {
-    const user = JSON.parse(localStorage.getItem('user')!)
-    return user !== null && user.emailVerified !== false ? true : false
+    const user = JSON.parse(localStorage.getItem('user')!);
+    return user !== null && user.emailVerified !== false ? true : false;
   }
 
   GoogleAuth() {
@@ -124,7 +124,9 @@ export class AuthService {
   SignOut() {
     return this.afAuth.signOut().then(() => {
       localStorage.removeItem('user')
-      this.router.navigate(['login'])
+      this.router.navigate(['sign-in'])
+    }, (error) => {
+      console.log(error)
     })
   }
 }

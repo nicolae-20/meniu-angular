@@ -43,6 +43,7 @@ import {AngularFireMessagingModule} from '@angular/fire/compat/messaging'
 import { AuthService } from './shared/services/auth.service';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { VerifyEmailComponent } from './verifyemail/verifyemail.component';
+import { LoginComponent } from './login/login.component';
 
 
 @NgModule({
@@ -64,6 +65,7 @@ import { VerifyEmailComponent } from './verifyemail/verifyemail.component';
     ProductDetailsComponent,
     CheckoutComponent,
     VerifyEmailComponent,
+    LoginComponent,
   ],
   imports: [
     BrowserModule,

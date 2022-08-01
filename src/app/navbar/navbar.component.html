@@ -13,8 +13,9 @@
             <button mat-menu-item>Salveaza datele</button>
             <button mat-menu-item>Fetch datele</button>
         </mat-menu> -->
-        <a routerLink="/login" class="text-login" mat-button>Login</a>
-  
+        <a routerLink="/sign-up" *ngIf="!authService.isLoggedIn" class="text-login" mat-button>Register</a>
+        <a routerLink="/sign-in" *ngIf="!authService.isLoggedIn" class="text-login" mat-button>Login</a>
+        <a class="text-login" *ngIf="authService.isLoggedIn" (click)="authService.SignOut()" mat-button>Logout</a>
         </div>
         
         
